@@ -10,6 +10,13 @@ public class mouse : MonoBehaviour
     [SerializeField]
     GameObject tower;
 
+    GameObject[,] board;
+
+    private void Start()
+    {
+        board = new GameObject[15, 15];
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -28,11 +35,20 @@ public class mouse : MonoBehaviour
             if (hitPoint.x < 8 && hitPoint.x > -8 && hitPoint.z < 8 && hitPoint.z > -8) {
                 highLighter.transform.position = hitPoint;
 
+                hitPoint.y = 1;
+
                 if (Input.GetMouseButtonDown(0))
                 {
-                    hitPoint.y = 1;
-                    Instantiate(tower, hitPoint, Quaternion.identity);
+                    if (board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] == null)
+                        board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] = Instantiate(tower, hitPoint, Quaternion.identity);
+                } else if (Input.GetMouseButtonDown(1))
+                {
+                    Destroy(board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)]);
+                    board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] = null;
+
                 }
+
+                
             }
         }
     }

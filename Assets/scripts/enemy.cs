@@ -5,7 +5,17 @@ using UnityEngine.AI;
 
 public class enemy : MonoBehaviour
 {
+    [SerializeField]
+    Material hostileMat;
+
+    [SerializeField]
+    Material patrolMat;
+
+    Renderer _renderer;
+    ParticleSystemRenderer pRenderer;
+
     NavMeshAgent agent;
+    GameObject targetTower;
 
     bool patrol = false;
 
@@ -13,6 +23,8 @@ public class enemy : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        _renderer = GetComponent<Renderer>();
+        pRenderer = GetComponent<ParticleSystemRenderer>();
 
         ScanAndMove();
     }
@@ -36,6 +48,7 @@ public class enemy : MonoBehaviour
                 {
                     closestDist = dist;
                     closestTowerPos = tower.transform.position;
+                    targetTower = tower;
                 }
             }
 
@@ -50,20 +63,34 @@ public class enemy : MonoBehaviour
     {
         if (patrol)
         {
+            _renderer.material = patrolMat;
+            pRenderer.material = patrolMat;
+
             ScanAndMove();
 
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 Patrol();
         }
 
-        if (!patrol && !agent.pathPending && agent.remainingDistance < 0.5f)
-        {
-            ScanAndMove();
+        if (!patrol) {
+            _renderer.material = hostileMat;
+            pRenderer.material = hostileMat;
+
+            if (!agent.pathPending && agent.remainingDistance < 0.5f || targetTower == null)
+                ScanAndMove();
         }
     }
 
     void Patrol()
     {
         agent.SetDestination(new Vector3(Random.Range(-8f, 8f), 1f, Random.Range(-8f, 8f)));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Tower"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

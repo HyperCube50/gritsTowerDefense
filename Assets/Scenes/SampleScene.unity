@@ -5050,7 +5050,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fcebfbc4f12b84f558fd8acd71d75b2a, type: 2}
+  - {fileID: 2100000, guid: e30dcd77e3bc944cbb4397ed37ee808a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5129,6 +5129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5310e0a1d6ff74a759a79a8f51a08dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hostileMat: {fileID: 2100000, guid: fcebfbc4f12b84f558fd8acd71d75b2a, type: 2}
+  patrolMat: {fileID: 2100000, guid: e30dcd77e3bc944cbb4397ed37ee808a, type: 2}
 --- !u!199 &1674822119
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5150,7 +5152,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fcebfbc4f12b84f558fd8acd71d75b2a, type: 2}
+  - {fileID: 2100000, guid: e30dcd77e3bc944cbb4397ed37ee808a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
