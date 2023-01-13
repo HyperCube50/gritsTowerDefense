@@ -8,6 +8,9 @@ public class hueShift : MonoBehaviour
     Material mat;
 
     [SerializeField]
+    Material laserMat;
+
+    [SerializeField]
     float speed = 1f;
 
     int[] redList;
@@ -35,9 +38,7 @@ public class hueShift : MonoBehaviour
         t += Time.deltaTime * speed;
 
         if (t >= 6)
-        {
             t = 0;
-        }
 
         int floored = Mathf.FloorToInt(t);
         int ceiled = Mathf.CeilToInt(t);
