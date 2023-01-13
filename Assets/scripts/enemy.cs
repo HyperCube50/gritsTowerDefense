@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class enemy : MonoBehaviour
 {
@@ -19,11 +20,17 @@ public class enemy : MonoBehaviour
 
     bool patrol = false;
 
-    public float hitPoint = 10f;
+    public float maxHitPoint = 10f;
+    public float currentHitPoint;
+
+    public Slider healthSlider;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentHitPoint = maxHitPoint;
+        healthSlider.maxValue = maxHitPoint;
+        healthSlider.value = currentHitPoint;
         agent = GetComponent<NavMeshAgent>();
         _renderer = GetComponent<Renderer>();
         pRenderer = GetComponent<ParticleSystemRenderer>();
@@ -63,6 +70,9 @@ public class enemy : MonoBehaviour
 
     private void Update()
     {
+        //Health bar
+        healthSlider.value = currentHitPoint;
+
         if (patrol)
         {
             _renderer.material = patrolMat;
@@ -82,7 +92,7 @@ public class enemy : MonoBehaviour
                 ScanAndMove();
         }
 
-        if (hitPoint <= 0)
+        if (currentHitPoint <= 0)
         {
             Destroy(gameObject);
         }

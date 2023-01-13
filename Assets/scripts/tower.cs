@@ -40,12 +40,12 @@ public class tower : MonoBehaviour
 
         enemy enemyComponent = e.GetComponent<enemy>();
 
-        while (enemyComponent.hitPoint > 0)
+        while (enemyComponent.currentHitPoint > 0)
         {
             yield return new WaitForSeconds(1f);
-            enemyComponent.hitPoint -= dps;
+            enemyComponent.currentHitPoint -= dps;
 
-            Debug.Log(enemyComponent.hitPoint);
+            Debug.Log(enemyComponent.currentHitPoint);
         }
 
         shooting = false;
