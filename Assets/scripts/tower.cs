@@ -4,9 +4,26 @@ using UnityEngine;
 
 public class tower : MonoBehaviour
 {
+    [SerializeField]
+    public float spawnHeight;
+
+    [SerializeField]
+    public float laserHeight;
+
+    [SerializeField]
+    public Vector3 startingRotation;
+
     GameObject closestEnemy = null;
 
     bool shooting = false;
+
+    LineRenderer lineRenderer;
+
+    private void Start()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.enabled = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -42,12 +59,20 @@ public class tower : MonoBehaviour
 
         while (enemyComponent.currentHitPoint > 0)
         {
-            yield return new WaitForSeconds(1f);
-            enemyComponent.currentHitPoint -= dps;
+            yield return new WaitForSeconds(0.1f);
+            enemyComponent.currentHitPoint -= dps / 10f;
+
+            lineRenderer.SetPosition(0, transform.position + new Vector3(0f, laserHeight, 0f));
+
+            if (e != null)
+                lineRenderer.SetPosition(1, e.transform.position);
+
+            lineRenderer.enabled = true;
 
             Debug.Log(enemyComponent.currentHitPoint);
         }
 
+        lineRenderer.enabled = false;
         shooting = false;
     }
 }
