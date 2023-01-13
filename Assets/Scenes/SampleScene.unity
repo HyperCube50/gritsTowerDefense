@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.13222122, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.049153566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5520,6 +5520,36 @@ MonoBehaviour:
   maxHitPoint: 10
   currentHitPoint: 0
   healthSlider: {fileID: 235091729}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0.94218117, b: 0, a: 1}
+    key2: {r: 0, g: 1, b: 0.120704174, a: 0}
+    key3: {r: 0, g: 1, b: 0.120704174, a: 0}
+    key4: {r: 0, g: 1, b: 0.120704174, a: 0}
+    key5: {r: 0, g: 1, b: 0.120704174, a: 0}
+    key6: {r: 0, g: 1, b: 0.120704174, a: 0}
+    key7: {r: 0, g: 1, b: 0.120704174, a: 0}
+    ctime0: 7132
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 65535
+    ctime5: 65535
+    ctime6: 65535
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 673048560}
 --- !u!199 &1674822119
 ParticleSystemRenderer:
   serializedVersion: 6

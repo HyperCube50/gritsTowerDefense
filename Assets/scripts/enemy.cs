@@ -24,6 +24,8 @@ public class enemy : MonoBehaviour
     public float currentHitPoint;
 
     public Slider healthSlider;
+    public Gradient gradient;
+    public Image fill;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class enemy : MonoBehaviour
         currentHitPoint = maxHitPoint;
         healthSlider.maxValue = maxHitPoint;
         healthSlider.value = currentHitPoint;
+        fill.color = gradient.Evaluate(1f);
         agent = GetComponent<NavMeshAgent>();
         _renderer = GetComponent<Renderer>();
         pRenderer = GetComponent<ParticleSystemRenderer>();
@@ -72,6 +75,8 @@ public class enemy : MonoBehaviour
     {
         //Health bar
         healthSlider.value = currentHitPoint;
+        fill.color = gradient.Evaluate(healthSlider.normalizedValue);
+      
 
         if (patrol)
         {
