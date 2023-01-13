@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class tower : MonoBehaviour
-{/*
+{
     GameObject closestEnemy = null;
+
+    bool shooting = false;
 
     // Update is called once per frame
     void Update()
@@ -27,18 +29,25 @@ public class tower : MonoBehaviour
             }
         } else
         {
-            StartCoroutine(damagePerSecond(closestEnemy, 1f));
+            if (!shooting)
+                StartCoroutine(damagePerSecond(closestEnemy, 1f));
         }
     }
 
     IEnumerator damagePerSecond(GameObject e, float dps)
     {
-        while (e.GetComponent)
+        shooting = true;
 
-        e.GetComponent<enemy>().hitPoint -= dps;
+        enemy enemyComponent = e.GetComponent<enemy>();
 
-        Debug.Log(e.GetComponent<enemy>().hitPoint);
+        while (enemyComponent.hitPoint > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            enemyComponent.hitPoint -= dps;
 
-        yield return new WaitForSeconds(1f);
-    }*/
+            Debug.Log(enemyComponent.hitPoint);
+        }
+
+        shooting = false;
+    }
 }

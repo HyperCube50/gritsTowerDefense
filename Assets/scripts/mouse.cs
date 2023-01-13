@@ -14,7 +14,7 @@ public class mouse : MonoBehaviour
 
     private void Start()
     {
-        board = new GameObject[15, 15];
+        board = new GameObject[16, 16];
     }
 
     // Update is called once per frame
