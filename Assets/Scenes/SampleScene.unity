@@ -5012,7 +5012,7 @@ GameObject:
   - component: {fileID: 1674822119}
   m_Layer: 2
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5131,6 +5131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostileMat: {fileID: 2100000, guid: fcebfbc4f12b84f558fd8acd71d75b2a, type: 2}
   patrolMat: {fileID: 2100000, guid: e30dcd77e3bc944cbb4397ed37ee808a, type: 2}
+  hitPoint: 10
 --- !u!199 &1674822119
 ParticleSystemRenderer:
   serializedVersion: 6

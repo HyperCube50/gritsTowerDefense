@@ -19,6 +19,8 @@ public class enemy : MonoBehaviour
 
     bool patrol = false;
 
+    public float hitPoint = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,15 +42,15 @@ public class enemy : MonoBehaviour
             float closestDist = Mathf.Infinity;
             Vector3 closestTowerPos = new Vector3();
 
-            foreach (GameObject tower in towers)
+            foreach (GameObject t in towers)
             {
-                float dist = Vector3.SqrMagnitude(transform.position - tower.transform.position);
+                float dist = Vector3.SqrMagnitude(transform.position - t.transform.position);
 
                 if (closestDist > dist)
                 {
                     closestDist = dist;
-                    closestTowerPos = tower.transform.position;
-                    targetTower = tower;
+                    closestTowerPos = t.transform.position;
+                    targetTower = t;
                 }
             }
 
@@ -78,6 +80,11 @@ public class enemy : MonoBehaviour
 
             if (!agent.pathPending && agent.remainingDistance < 0.5f || targetTower == null)
                 ScanAndMove();
+        }
+
+        if (hitPoint <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
