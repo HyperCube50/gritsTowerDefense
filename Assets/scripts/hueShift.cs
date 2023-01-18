@@ -8,9 +8,6 @@ public class hueShift : MonoBehaviour
     Material mat;
 
     [SerializeField]
-    Material laserMat;
-
-    [SerializeField]
     float speed = 1f;
 
     int[] redList;
