@@ -68,8 +68,6 @@ public class tower : MonoBehaviour
                 lineRenderer.SetPosition(1, e.transform.position);
 
             lineRenderer.enabled = true;
-
-            Debug.Log(enemyComponent.currentHitPoint);
         }
 
         lineRenderer.enabled = false;
