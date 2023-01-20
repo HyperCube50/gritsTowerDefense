@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5868492220329738806}
   - component: {fileID: 4897581136226932441}
   m_Layer: 2
-  m_Name: Tower
+  m_Name: Overheat
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
