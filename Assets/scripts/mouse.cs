@@ -8,15 +8,22 @@ public class mouse : MonoBehaviour
     GameObject highLighter;
 
     [SerializeField]
-    GameObject tower;
+    public GameObject[] towers;
 
-    tower towerComponent;
+    [HideInInspector]
+    public GameObject tower;
+
+    [HideInInspector]
+    public tower towerComponent;
 
     GameObject[,] board;
 
     private void Start()
     {
         board = new GameObject[16, 16];
+
+        tower = towers[0];
+
         towerComponent = tower.GetComponent<tower>();
     }
 

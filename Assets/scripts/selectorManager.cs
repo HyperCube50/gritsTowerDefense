@@ -8,10 +8,14 @@ public class selectorManager : MonoBehaviour
     [SerializeField]
     GameObject[] buttons;
 
+    [SerializeField]
+    mouse mouseManager;
+
     public enum TowerType
     {
         OVERHEAT,
-        MONKE
+        MONKE,
+        SPARK
     }
 
     public TowerType currentType = TowerType.OVERHEAT;
@@ -24,5 +28,8 @@ public class selectorManager : MonoBehaviour
         }
 
         buttons[(int)currentType].GetComponent<Outline>().enabled = true;
+
+        mouseManager.tower = mouseManager.towers[(int)currentType];
+        mouseManager.towerComponent = mouseManager.tower.GetComponent<tower>();
     }
 }

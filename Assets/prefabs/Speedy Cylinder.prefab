@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: -8108761574867768528}
   - component: {fileID: 6754404880473709219}
   - component: {fileID: -4611346059425162540}
-  - component: {fileID: 5468204508552459419}
-  - component: {fileID: 5446149068459664268}
+  - component: {fileID: 5868492220329738806}
+  - component: {fileID: 4897581136226932441}
   m_Layer: 2
-  m_Name: Monke
+  m_Name: Speedy Cylinder
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,14 +30,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4086947293457531640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.041914, y: 5.114491, z: 4.197062}
+  m_LocalScale: {x: 31.54358, y: 10, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4086947293457531639
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4086947293457531640}
-  m_Mesh: {fileID: -6195245291975648998, guid: 4925f38adc330439cb6c2b17aedf6435, type: 3}
+  m_Mesh: {fileID: -1550514412580984892, guid: 8eab135db30d743e58b79a8729e86c4b, type: 3}
 --- !u!23 &4086947293457531638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnHeight: 1.32
-  laserHeight: 0.3
-  startingRotation: {x: 0, y: 180, z: 0}
+  laserHeight: 0.6
+  startingRotation: {x: -90, y: 0, z: 90}
 --- !u!120 &-4611346059425162540
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!65 &5468204508552459419
+--- !u!65 &5868492220329738806
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,12 +226,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4086947293457531640}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19833738, y: 0.3910459, z: 0.238262}
-  m_Center: {x: 0.0053057186, y: -0.112310536, z: 0.017401338}
---- !u!208 &5446149068459664268
+  m_Size: {x: 0.031702172, y: 0.09999999, z: 0.26666665}
+  m_Center: {x: 0, y: 0, z: -0.04288061}
+--- !u!208 &4897581136226932441
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,9 +241,9 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.09900001, y: 0.19600001, z: 0.119}
+  m_Extents: {x: 0.016, y: 0.05, z: 0.133}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.0050000004, y: -0.112, z: 0.017}
+  m_Center: {x: 0, y: 0, z: -0.043}
   m_TimeToStationary: 0.5
