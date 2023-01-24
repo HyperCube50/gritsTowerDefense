@@ -13,6 +13,8 @@ public class tower : MonoBehaviour
     [SerializeField]
     public Vector3 startingRotation;
 
+    [SerializeField] public float dps;
+
     GameObject closestEnemy = null;
 
     bool shooting = false;
@@ -47,7 +49,7 @@ public class tower : MonoBehaviour
         } else
         {
             if (!shooting)
-                StartCoroutine(damagePerSecond(closestEnemy, 1f));
+                StartCoroutine(damagePerSecond(closestEnemy, dps));
         }
     }
 

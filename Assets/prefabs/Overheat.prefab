@@ -119,6 +119,7 @@ MonoBehaviour:
   spawnHeight: 1.32
   laserHeight: 0.6
   startingRotation: {x: -90, y: 0, z: 90}
+  dps: 0.5
 --- !u!120 &-4611346059425162540
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10064028
+        value: 0.106933594
         inSlope: 0
         outSlope: 0
         tangentMode: 0

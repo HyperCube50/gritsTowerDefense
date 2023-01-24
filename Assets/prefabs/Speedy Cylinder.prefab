@@ -119,6 +119,7 @@ MonoBehaviour:
   spawnHeight: 1.32
   laserHeight: 0.6
   startingRotation: {x: -90, y: 0, z: 90}
+  dps: 2
 --- !u!120 &-4611346059425162540
 LineRenderer:
   m_ObjectHideFlags: 0
