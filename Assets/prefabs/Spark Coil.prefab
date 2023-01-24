@@ -119,7 +119,8 @@ MonoBehaviour:
   spawnHeight: 1.55
   laserHeight: 0.1
   startingRotation: {x: -90, y: 0, z: 0}
-  dps: 1.5
+  dps: 2
+  cost: 5
 --- !u!120 &-4611346059425162540
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d36004c6c25e44f63b54afcc6a9f7521, type: 2}
+  - {fileID: 2100000, guid: b906fc079d3c34d41868fd42be64b93d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,7 +173,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10064028
+        value: 0.06919192
         inSlope: 0
         outSlope: 0
         tangentMode: 0

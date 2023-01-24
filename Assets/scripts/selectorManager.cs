@@ -15,7 +15,8 @@ public class selectorManager : MonoBehaviour
     {
         OVERHEAT,
         MONKE,
-        SPARK
+        SPARK,
+        SPEEDY
     }
 
     public TowerType currentType = TowerType.OVERHEAT;

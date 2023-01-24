@@ -11,6 +11,8 @@ public class enemy : MonoBehaviour
 
     [SerializeField]
     Material patrolMat;
+    
+    creditManager creditm;
 
     Renderer _renderer;
     ParticleSystemRenderer pRenderer;
@@ -37,6 +39,8 @@ public class enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         _renderer = GetComponent<Renderer>();
         pRenderer = GetComponent<ParticleSystemRenderer>();
+
+        creditm = GameObject.FindGameObjectWithTag("Manager").GetComponent<creditManager>();
 
         ScanAndMove();
     }
@@ -99,6 +103,8 @@ public class enemy : MonoBehaviour
 
         if (currentHitPoint <= 0)
         {
+            creditm.attackerCredit += 1;
+            creditm.updateUI();
             Destroy(gameObject);
         }
     }

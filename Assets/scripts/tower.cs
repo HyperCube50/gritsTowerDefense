@@ -13,7 +13,11 @@ public class tower : MonoBehaviour
     [SerializeField]
     public Vector3 startingRotation;
 
-    [SerializeField] public float dps;
+    [SerializeField]
+    public float dps;
+
+    [SerializeField]
+    public int cost;
 
     GameObject closestEnemy = null;
 

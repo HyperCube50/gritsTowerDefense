@@ -16,6 +16,9 @@ public class mouse : MonoBehaviour
     [HideInInspector]
     public tower towerComponent;
 
+    [SerializeField] 
+    creditManager creditm;
+
     GameObject[,] board;
 
     private void Start()
@@ -50,7 +53,12 @@ public class mouse : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] == null)
-                        board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] = Instantiate(tower, hitPoint, Quaternion.Euler(towerComponent.startingRotation));
+                        if (creditm.attackerCredit - towerComponent.cost > 0)
+                        {
+                            board[(int) (hitPoint.x + 7.5f), (int) (hitPoint.z + 7.5f)] = Instantiate(tower, hitPoint, Quaternion.Euler(towerComponent.startingRotation));
+                            creditm.attackerCredit -= towerComponent.cost;
+                            creditm.updateUI();
+                        }
                 } else if (Input.GetMouseButtonDown(1))
                 {
                     Destroy(board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)]);

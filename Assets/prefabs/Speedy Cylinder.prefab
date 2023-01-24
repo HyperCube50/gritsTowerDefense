@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: -8108761574867768528}
   - component: {fileID: 6754404880473709219}
   - component: {fileID: -4611346059425162540}
-  - component: {fileID: 5868492220329738806}
-  - component: {fileID: 4897581136226932441}
+  - component: {fileID: 6706537968824925095}
+  - component: {fileID: 1844435807511539151}
   m_Layer: 2
   m_Name: Speedy Cylinder
   m_TagString: Tower
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4086947293457531640}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 31.54358, y: 10, z: 7.5}
+  m_LocalScale: {x: 20.29522, y: 8.87812, z: 22.647}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4086947293457531640}
-  m_Mesh: {fileID: -1550514412580984892, guid: 8eab135db30d743e58b79a8729e86c4b, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: f894d85badba44fafaba3842f46f320b, type: 3}
 --- !u!23 &4086947293457531638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116,10 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db674196f2134cceae3cdec8fee07ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnHeight: 1.32
-  laserHeight: 0.6
-  startingRotation: {x: -90, y: 0, z: 90}
-  dps: 2
+  spawnHeight: 0.6
+  laserHeight: 0.2
+  startingRotation: {x: -90, y: 0, z: 180}
+  dps: 4
+  cost: 12
 --- !u!120 &-4611346059425162540
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d36004c6c25e44f63b54afcc6a9f7521, type: 2}
+  - {fileID: 2100000, guid: 022d9e5524e186940aade44def6f745c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,7 +173,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10064028
+        value: 0.0629053
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -219,7 +220,23 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!65 &5868492220329738806
+--- !u!208 &6706537968824925095
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086947293457531640}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.025, y: 0.056, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.030000001, z: -0.006}
+  m_TimeToStationary: 0.5
+--- !u!65 &1844435807511539151
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,21 +247,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.031702172, y: 0.09999999, z: 0.26666665}
-  m_Center: {x: 0, y: 0, z: -0.04288061}
---- !u!208 &4897581136226932441
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4086947293457531640}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.016, y: 0.05, z: 0.133}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: -0.043}
-  m_TimeToStationary: 0.5
+  m_Size: {x: 0.0492727, y: 0.112636484, z: 0.044155966}
+  m_Center: {x: -0.000015603378, y: -0.029681796, z: -0.0057354565}
