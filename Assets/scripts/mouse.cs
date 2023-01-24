@@ -53,10 +53,10 @@ public class mouse : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] == null)
-                        if (creditm.attackerCredit - towerComponent.cost > 0)
+                        if (creditm.defenderCredit - towerComponent.cost >= 0)
                         {
                             board[(int) (hitPoint.x + 7.5f), (int) (hitPoint.z + 7.5f)] = Instantiate(tower, hitPoint, Quaternion.Euler(towerComponent.startingRotation));
-                            creditm.attackerCredit -= towerComponent.cost;
+                            creditm.defenderCredit -= towerComponent.cost;
                             creditm.updateUI();
                         }
                 } else if (Input.GetMouseButtonDown(1))

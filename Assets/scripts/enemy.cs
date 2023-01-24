@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -47,9 +48,16 @@ public class enemy : MonoBehaviour
 
     void ScanAndMove()
     {
-        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        List<GameObject> towers = GameObject.FindGameObjectsWithTag("Tower").ToList();
 
-        if (towers.Length != 0)
+        GameObject townhall = GameObject.FindGameObjectWithTag("Townhall");
+
+        if (townhall != null)
+        {
+            towers.Add(townhall);
+        }
+
+        if (towers.Count != 0)
         {
             patrol = false;
 
@@ -103,7 +111,7 @@ public class enemy : MonoBehaviour
 
         if (currentHitPoint <= 0)
         {
-            creditm.attackerCredit += 1;
+            creditm.defenderCredit += 1;
             creditm.updateUI();
             Destroy(gameObject);
         }
@@ -118,6 +126,15 @@ public class enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Tower"))
         {
+            creditm.attackerCredit += 2;
+            creditm.updateUI();
+
+            Destroy(other.gameObject);
+        } else if (other.gameObject.CompareTag("Townhall"))
+        {
+            creditm.defenderCredit = 0;
+            creditm.updateUI();
+
             Destroy(other.gameObject);
         }
     }
