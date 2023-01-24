@@ -46,26 +46,29 @@ public class mouse : MonoBehaviour
 
 
             if (hitPoint.x < 8 && hitPoint.x > -8 && hitPoint.z < 8 && hitPoint.z > -8) {
-                highLighter.transform.position = hitPoint;
+                //if (hitPoint.x > 1f || hitPoint.x < -1f || hitPoint.y > 1 || hitPoint.y < -1)
+               // {
+                    highLighter.transform.position = hitPoint;
 
-                hitPoint.y = towerComponent.spawnHeight;
+                    hitPoint.y = towerComponent.spawnHeight;
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] == null)
-                        if (creditm.defenderCredit - towerComponent.cost >= 0)
-                        {
-                            board[(int) (hitPoint.x + 7.5f), (int) (hitPoint.z + 7.5f)] = Instantiate(tower, hitPoint, Quaternion.Euler(towerComponent.startingRotation));
-                            creditm.defenderCredit -= towerComponent.cost;
-                            creditm.updateUI();
-                        }
-                } else if (Input.GetMouseButtonDown(1))
-                {
-                    Destroy(board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)]);
-                    board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] = null;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] == null)
+                            if (creditm.defenderCredit - towerComponent.cost >= 0)
+                            {
+                                board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] = Instantiate(tower, hitPoint, Quaternion.Euler(towerComponent.startingRotation));
+                                creditm.defenderCredit -= towerComponent.cost;
+                                creditm.updateUI();
+                            }
+                    }
+                    else if (Input.GetMouseButtonDown(1))
+                    {
+                        Destroy(board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)]);
+                        board[(int)(hitPoint.x + 7.5f), (int)(hitPoint.z + 7.5f)] = null;
 
-                }
-
+                    }
+               // }
                 
             }
         }

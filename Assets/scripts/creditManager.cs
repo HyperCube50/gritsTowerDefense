@@ -14,9 +14,22 @@ public class creditManager : MonoBehaviour
     public int attackerCredit = 10;
     public int defenderCredit = 10;
 
+    private void Start()
+    {
+        InvokeRepeating("addCredit", 3f, 3f);
+    }
+
     public void updateUI()
     {
         attackerText.SetText(attackerCredit.ToString());
         defenderText.SetText(defenderCredit.ToString());
+    }
+
+    void addCredit()
+    {
+        attackerCredit++;
+        defenderCredit++;
+
+        updateUI();
     }
 }
